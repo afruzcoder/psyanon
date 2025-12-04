@@ -10,10 +10,10 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         User::updateOrCreate(
-            ['email' => 'admin@silentvoice.local'],
+            ['email' => 'admin@psyanon.local'],
             [
                 'name' => 'Admin',
-                'password' => bcrypt('password123'), // Смени в продакшене!
+                'password' => bcrypt('psy@n0n2025'), // Смени в продакшене!
                 'role' => 'admin'
             ]
         );
