@@ -16,6 +16,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         @yield('styles')
+
         /* Language Switcher */
         .language-switcher {
             position: fixed;
@@ -60,12 +61,247 @@
             background: #6d28d9;
             transform: translateY(-1px);
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Body adjustments */
+            body {
+                font-size: 1rem;
+            }
+
+            /* Language Switcher for Mobile */
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 4px;
+                gap: 5px;
+            }
+
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+
+            /* Header */
+            header {
+                width: 95%;
+                height: auto;
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            header nav {
+                width: 100%;
+            }
+
+            header ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
+            header ul li {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            header ul li a,
+            header ul li button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .pbtn {
+                width: 100%;
+                padding: 12px 20px;
+            }
+
+            /* Main content */
+            main {
+                width: 95%;
+            }
+
+            /* Home page - hat section */
+            .hat {
+                flex-direction: column-reverse;
+            }
+
+            .ib {
+                margin-left: 0;
+                flex-basis: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .ib img {
+                max-width: 80%;
+                height: auto;
+            }
+
+            .txt {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .txt .pbtn {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+            }
+
+            /* Action buttons */
+            .aBtns {
+                flex-direction: column;
+            }
+
+            .aBtns a {
+                flex-basis: 100%;
+                margin-bottom: 15px;
+            }
+
+            .aBtns div {
+                padding: 20px;
+            }
+
+            .aBtns img {
+                height: 60px;
+            }
+
+            .aBtns h3 {
+                margin-left: 5%;
+                font-size: 1.1rem;
+            }
+
+            /* About page */
+            .about-site {
+                width: 95%;
+            }
+
+            .about-columns {
+                flex-direction: column;
+            }
+
+            .about-text, .about-img {
+                flex-basis: 100%;
+            }
+
+            /* Share story form */
+            .share-story {
+                width: 95%;
+            }
+
+            .story-form-container {
+                flex-direction: column;
+            }
+
+            .story-form-text {
+                flex-basis: 100%;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .story-form-img {
+                flex-basis: 100%;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 5%;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-container div {
+                flex-basis: 100%;
+                margin-bottom: 25px;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+            }
+
+            .footer-bottom p {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            body {
+                font-size: 1.1rem;
+            }
+
+            header {
+                width: 90%;
+            }
+
+            header ul {
+                flex-wrap: wrap;
+            }
+
+            header ul li {
+                margin-left: 15px;
+            }
+
+            main, .about-site, .share-story {
+                width: 90%;
+            }
+
+            .hat {
+                justify-content: center;
+            }
+
+            .ib {
+                margin-left: 5%;
+            }
+
+            .aBtns a {
+                flex-basis: 48%;
+            }
+
+            footer {
+                padding: 35px 5%;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            .pbtn {
+                font-size: 0.9rem;
+            }
+
+            .aBtns div {
+                padding: 15px;
+            }
+
+            .story-form-text {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body class="@yield('body_style')">
 <header>
     <!-- Language Switcher -->
-    <div class="language-switcher" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+    <div class="language-switcher">
         <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
         <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
     </div>
@@ -100,8 +336,10 @@
         </div>
         <div class="footer-contact">
             <h4 data-i18n="footer_contact">Contact</h4>
-            <p>Email: <a href="mailto:support@psyanon.org" data-i18n="footer_email">support@psyanon.org</a></p>
-            <p>Telegram: <a href="#" data-i18n="footer_telegram">@psyanon</a></p>
+            <p>Email: <a href="mailto:psyanon.org@gmail.com" data-i18n="footer_email" target="_blank" rel="noopener noreferrer">psyanon.org@gmail.com</a></p>
+            <p>Telegram: <a href="https://t.me/Sumaiichik" data-i18n="footer_telegram" target="_blank" rel="noopener noreferrer">@Sumaiichik</a></p>
+            <p>Tiktok: <a href="https://www.tiktok.com/@psyanon_org?_r=1&_t=ZS-932CFzKQDHk" data-i18n="footer_tiktok" target="_blank" rel="noopener noreferrer">psyanon_org</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/psyanon_org?igsh=MWd6aG04ZXZjN3VrOQ==" data-i18n="footer_instagram" target="_blank" rel="noopener noreferrer">psyanon_org</a></p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -142,7 +380,7 @@
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
                 if (translations[key]) {
-                    el.placeholder = translations[key]; // <-- Меняем placeholder
+                    el.placeholder = translations[key];
                 }
             });
 

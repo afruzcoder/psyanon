@@ -46,7 +46,7 @@
 
         <section class="aboutpro">
             <h2 data-i18n="welcome_about_title">About the project</h2>
-            <p data-i18n="welcome_about_text">I decided to establish the PsyAnon platform to assist others. In the future. I aspire to be a psychologist, and this platform is my first step towards that aim. By establishing this place today, I can begin providing emotional support, creating a safe environment, and listening to those who need to be heard.</p>
+            <p data-i18n="welcome_about_text">I decided to establish the PsyAnon platform to assist others. In the future, I pursue to be a psychologist, and this platform is my first step towards that aim.</p>
             <div class="aBtns">
                 <a href="{{ route('posts.create') }}">
                     <div>
